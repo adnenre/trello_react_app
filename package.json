@@ -7,6 +7,8 @@
   "keywords": [
     "trello board"
   ],
+  "homepage": "https://adnenre.github.io/trello_react_app",
+  "dependencies": {
   "private": true,
   "dependencies": {
     "gh-pages": "^1.2.0",
