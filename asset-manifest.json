@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/trello_react_app/static/css/main.7ddae826.chunk.css",
+    "main.js": "/trello_react_app/static/js/main.26d729a1.chunk.js",
+    "main.js.map": "/trello_react_app/static/js/main.26d729a1.chunk.js.map",
+    "runtime-main.js": "/trello_react_app/static/js/runtime-main.b049a75f.js",
+    "runtime-main.js.map": "/trello_react_app/static/js/runtime-main.b049a75f.js.map",
+    "static/js/2.db4797ba.chunk.js": "/trello_react_app/static/js/2.db4797ba.chunk.js",
+    "static/js/2.db4797ba.chunk.js.map": "/trello_react_app/static/js/2.db4797ba.chunk.js.map",
+    "static/js/3.ddacc83f.chunk.js": "/trello_react_app/static/js/3.ddacc83f.chunk.js",
+    "static/js/3.ddacc83f.chunk.js.map": "/trello_react_app/static/js/3.ddacc83f.chunk.js.map",
+    "index.html": "/trello_react_app/index.html",
+    "static/css/main.7ddae826.chunk.css.map": "/trello_react_app/static/css/main.7ddae826.chunk.css.map",
+    "static/js/2.db4797ba.chunk.js.LICENSE.txt": "/trello_react_app/static/js/2.db4797ba.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b049a75f.js",
+    "static/js/2.db4797ba.chunk.js",
+    "static/css/main.7ddae826.chunk.css",
+    "static/js/main.26d729a1.chunk.js"
+  ]
+}
