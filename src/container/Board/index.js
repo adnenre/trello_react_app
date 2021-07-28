@@ -28,6 +28,9 @@ const Board = ({ cols }) => {
       },
     ];
     seColumns(newCols);
+
+    // SAVE ADD NEW COLUMNS TO LOCAL STORAGE
+    saveToStorage(newCols);
   };
 
   // Add task to the specific column
@@ -73,13 +76,13 @@ const Board = ({ cols }) => {
       }
       return col;
     });
-    // clear dragged task
+    // CLEAR ADD TASK
     setDraggedTask(null);
 
-    // update column
+    // UPDATE COLUMN
     seColumns(newColumns);
 
-    // save to local storage
+    // SAVE TO LOCAL STORAGE AFTER DRAGGING
     saveToStorage(newColumns);
   };
 
