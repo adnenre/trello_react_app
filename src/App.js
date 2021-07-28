@@ -8,7 +8,9 @@ import "./App.css";
 function App() {
   const cols = loadFromStorage("COLUMNS") || columns;
 
-  // i choosed to not use context
+  /**
+   * I CHOOSED NOT TO USE CONTEXT (fix prop drilling)
+   */
   return (
     <Wrapper>
       <Header> Trello </Header>
