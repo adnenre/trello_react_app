@@ -8,7 +8,8 @@ this project is a clone of trello board with simple features :
 - A user is able to add and label columns
 - A user is able to add and edit cards
 - a user is able to move cards betweens columns.
-- in the beginning the app will be initialised with 3 columns (fake data)
+- in the beginning the app will be initialised with 3 columns (fake data),
+- data are saved on localstorage under the key "COLUMN" , clear the local storage and default data will be loaded
 
 ## Available Scripts
 
