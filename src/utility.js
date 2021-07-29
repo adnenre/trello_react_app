@@ -12,7 +12,7 @@ const saveToStorage = (COLS) => {
 // LOAD FROM LOCALSTORAGE
 const loadFromStorage = () => {
   let columns = localStorage.getItem("COLUMNS");
-  return columns ? JSON.parse(columns) : [];
+  return columns ? JSON.parse(columns) : null;
 };
 
 export { uniqID, saveToStorage, loadFromStorage };
