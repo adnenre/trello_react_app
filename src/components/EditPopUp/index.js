@@ -33,8 +33,10 @@ const EditPopup = ({
     if (textValue) {
       callback(textValue);
       togglePopup();
+      setText("");
     }
   };
+
   // Call hook passing in the ref and a function to call on outside click
   useOnClickOutside(ref, () => setPopupOpen(false));
   return (
