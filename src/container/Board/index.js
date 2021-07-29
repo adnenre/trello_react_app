@@ -116,7 +116,7 @@ const Board = ({ cols }) => {
           primaryPopup
           buttonTitle={"+ Add Column"}
           textareaPlaceHolder={"Add Column Title ..."}
-          callback={(text) => handleAddColumn(text)}
+          callback={handleAddColumn}
         />
       </SBoard>
     </div>
