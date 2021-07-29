@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import SBoard from "./Board.styled";
 
 import { uniqID, saveToStorage } from "../../utility";
@@ -123,4 +124,22 @@ const Board = ({ cols }) => {
   );
 };
 
+Board.propTypes = {
+  col: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      tasks: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          columnTitle: PropTypes.string.isRequired,
+          desc: PropTypes.string.isRequired,
+        })
+      ),
+    })
+  ),
+};
+Board.defaultProps = {
+  cols: [],
+};
 export default Board;

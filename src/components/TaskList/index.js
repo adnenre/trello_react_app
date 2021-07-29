@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import EditableField from "../EditableField";
 //import DraggableItems from "../DraggableItems";
-const TaskLists = ({ tasks, onDragStart }) => {
+const TaskList = ({ tasks, onDragStart }) => {
   return (
     <>
       {tasks.map((task) => (
@@ -13,4 +14,15 @@ const TaskLists = ({ tasks, onDragStart }) => {
   );
 };
 
-export default TaskLists;
+// PROPTYPES
+TaskList.propTypes = {
+  tasks: PropTypes.arrayOf(PropTypes.object),
+};
+
+// DEFAULT PROPTYPES
+TaskList.defaultProps = {
+  tasks: [],
+  onDragStart: () => {},
+};
+
+export default TaskList;
