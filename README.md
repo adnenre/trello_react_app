@@ -1,8 +1,9 @@
 # trello react app
 
 this project is a clone of trello board with simple features :
+[Demo](https://adnenre.github.io/trello_react_app/)
 
-## App fonctionnality :
+## App fonctionnality
 
 - A user is able to add and label columns
 - A user is able to add and edit cards
