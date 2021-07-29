@@ -1,20 +1,19 @@
 import { uniqID } from "./utility";
 
-let columns = [
-  {
+let columns = {
+  "To Do": {
     id: uniqID(),
-
-    title: "To Do",
+    title: "Todo",
     tasks: [
       { id: uniqID(), columnTitle: "To Do", desc: "task six" },
       { id: uniqID(), columnTitle: "To Do", desc: "task seven" },
       { id: uniqID(), columnTitle: "To Do", desc: "task nine" },
     ],
   },
-  {
-    id: uniqID(),
 
-    title: "in Progress",
+  "In Progress": {
+    id: uniqID(),
+    title: "In Progress",
     tasks: [
       { id: uniqID(), columnTitle: "In Progress", desc: "task one" },
       { id: uniqID(), columnTitle: "In Progress", desc: "task twp" },
@@ -25,9 +24,8 @@ let columns = [
       },
     ],
   },
-  {
+  Done: {
     id: uniqID(),
-
     title: "Done",
     tasks: [
       { id: uniqID(), columnTitle: "Done", desc: "task four" },
@@ -35,12 +33,5 @@ let columns = [
       { id: uniqID(), columnTitle: "Done", desc: "task ten" },
     ],
   },
-  {
-    id: uniqID(),
-
-    title: "test",
-    tasks: [],
-  },
-];
-
+};
 export default columns;

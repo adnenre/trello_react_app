@@ -19,15 +19,15 @@ const Board = ({ cols }) => {
    * @param {string} title
    */
   const handleAddColumn = (title) => {
-    let newCols = [
+    let newCols = {
       ...columns,
-      {
+      [title]: {
         id: uniqID(),
-        order: columns.length + 1,
+
         title,
         tasks: [],
       },
-    ];
+    };
     seColumns(newCols);
 
     // SAVE ADD NEW COLUMNS TO LOCAL STORAGE
@@ -37,24 +37,19 @@ const Board = ({ cols }) => {
   // Add task to the specific column
   /**
    *
-   * @param {string} desc  task description
-   * @param {string} columnId columnId
-   * @param {sting} columnTitle columnTitle
+   * @param {string} title current column title
+  
+   * @param {sting} desc description
    * @returns
    */
-  const handleAddTask = (desc, columnId, columnTitle) => {
+  const handleAddTask = (title) => (desc) => {
     let newTask = {
       id: uniqID(),
-      columnTitle,
+      columnTitle: title,
       desc,
     };
-
-    let newColumns = [...columns].map((col) => {
-      if (col.id === columnId) {
-        col.tasks.push(newTask);
-      }
-      return col;
-    });
+    let newColumns = { ...columns };
+    newColumns[title].tasks.push(newTask);
     seColumns(newColumns);
     saveToStorage(newColumns);
   };
@@ -67,16 +62,18 @@ const Board = ({ cols }) => {
    * @returns
    */
   const onDrop = (title) => (e) => {
-    let newColumns = [...columns].map((col) => {
-      if (col.title === draggedTask.columnTitle) {
-        col.tasks = col.tasks.filter((task) => task.id !== draggedTask.id);
-      }
+    console.log(title);
 
-      if (col.title === title) {
-        col.tasks.push({ ...draggedTask, columnTitle: title });
-      }
-      return col;
+    let newColumns = { ...columns };
+    newColumns[title].tasks.push({
+      ...draggedTask,
+      columnTitle: title,
     });
+    let sourceTitle = draggedTask.columnTitle;
+    newColumns[sourceTitle].tasks = newColumns[sourceTitle].tasks.filter(
+      ({ id }) => id !== draggedTask.id
+    );
+
     // CLEAR ADD TASK
     setDraggedTask(null);
 
@@ -101,16 +98,16 @@ const Board = ({ cols }) => {
     <div style={{ display: "flex", flexDirection: "column" }}>
       <div>navbar</div>
       <SBoard>
-        {columns.map(({ id, title, tasks }) => (
+        {Object.entries(columns).map(([key, value]) => (
           <Card
             onDragStart={onDragStart}
             onDragOver={onDragOver}
-            onDrop={onDrop(title)}
-            key={id}
-            columnId={id}
-            title={title}
-            tasks={tasks}
-            handleAddTask={handleAddTask}
+            onDrop={onDrop(key)}
+            key={key}
+            columnId={value.id}
+            title={key}
+            tasks={value.tasks}
+            handleAddTask={handleAddTask(key)}
           />
         ))}
         <EditPopup

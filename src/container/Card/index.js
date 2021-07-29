@@ -20,10 +20,10 @@ const Card = ({
 }) => {
   /**
    * HANDLE ADD NEW TASK DESCRIPTION
-   * @param {string} text
+   * @param {string} description
    * @returns
    */
-  const handleTaskDesc = (text) => handleAddTask(text, columnId, title);
+  const handleTaskDesc = (desc) => handleAddTask(desc);
 
   return (
     <SCardWrapper {...props}>
