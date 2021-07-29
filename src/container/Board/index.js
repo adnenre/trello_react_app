@@ -62,17 +62,21 @@ const Board = ({ cols }) => {
    * @returns
    */
   const onDrop = (title) => (e) => {
-    console.log(title);
-
     let newColumns = { ...columns };
-    newColumns[title].tasks.push({
-      ...draggedTask,
-      columnTitle: title,
-    });
+
     let sourceTitle = draggedTask.columnTitle;
-    newColumns[sourceTitle].tasks = newColumns[sourceTitle].tasks.filter(
-      ({ id }) => id !== draggedTask.id
-    );
+    if (title === draggedTask.columnTitle) {
+      return null;
+    } else {
+      newColumns[sourceTitle].tasks = newColumns[sourceTitle].tasks.filter(
+        ({ id }) => id !== draggedTask.id
+      );
+
+      newColumns[title].tasks.push({
+        ...draggedTask,
+        columnTitle: title,
+      });
+    }
 
     // CLEAR ADD TASK
     setDraggedTask(null);
